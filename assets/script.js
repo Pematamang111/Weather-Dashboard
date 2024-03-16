@@ -2,6 +2,7 @@
 const weatherDetail = document.querySelector('#weatherDetail');
 const dayFive = document.querySelector('#dayFive');
 const searchButton = document.querySelector('#search');
+const selectInput = document.querySelector('#select');
 const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 
 
@@ -15,6 +16,11 @@ fetch(weatherUrl)
 })
     .then(function(data){
         console.log(data);
+          
+        const cityName = selectInput.value;
+        const checkWeather = 'http://api.openweathermap.org/geo/1.0/direct?q=${cityName},{state code},{country code},&limit=5&appid={apiKey}';
+ 
+
         for( let i = 0; i < data.length; i++){
             const today = document.createElement('h2');
             const todayTemp = document.createElement('p');
