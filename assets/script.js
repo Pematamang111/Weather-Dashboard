@@ -8,9 +8,16 @@ const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 
 //data==================================
 const cityName = selectInput.value; 
-const today = dayjs();
-    const formatDay = today.format('mm, dd, yyyy');
-    console.log(formatDay);
+
+/*const today = new Date();
+const year = today.getFullYear();
+const month = today.getMonth() + 1; 
+const day = today.getDate();
+    console.log(day);*/
+
+    const today = dayjs();
+    const formatDay = today.format('mm/dd/yyyy');
+    weatherDetail.append(formatDay);
     
     const setCity = localStorage.setItem('city', JSON.stringify(cityName));
     const getCity = JSON.parse(localStorage.getItem(setCity));
@@ -19,7 +26,7 @@ const today = dayjs();
     const texthead = createhead.innerHTML = getCity + "" + formatDay;
     weatherDetail.append(texthead);
 
-    const createLi = document.querySelector('li');
+    const createLi = document.createElement('li');
     createLi.style.backgroundColor = '#BBC3A4';
     const textLi = createLi.innerHTML = getCity;
     saveHistory.append(textLi);
