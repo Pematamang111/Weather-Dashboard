@@ -2,12 +2,12 @@
 const weatherDetail = document.querySelector('#weatherDetail');
 const dayFive = document.querySelector('#dayFive');
 const searchButton = document.querySelector('#search');
-const apiKey = 7cb9b0e18cc07a883b919195c72f4dcd;
+const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 
 
 //function==============================
 function getApi(){
-const weatherUrl = http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code},&limit=5&appid={apiKey}
+const weatherUrl = 'http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code},&limit=5&appid={apiKey}';
 
 fetch(weatherUrl)
    .then(function(response){
