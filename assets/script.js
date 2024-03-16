@@ -33,7 +33,7 @@ const day = today.getDate();
 
 //function==============================
 function getApi(){
-const weatherUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid={APIkey}'
+const weatherUrl = 'http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}'
 
 
 fetch(weatherUrl)
