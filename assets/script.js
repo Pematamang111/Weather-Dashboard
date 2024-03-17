@@ -58,35 +58,31 @@ function getWeather(lat, lon){
      .then(function(data){
          console.log(data);
 
-            for( let i = 0; i < data.length; i++){
+            for( let i = 0; i < 5; i++){
             const fiveDaysWeather = [];
-            if(dayjs(list.dt[i]).diff(dayjs(), 'day') === dayjs() &&
-            dayjs(list.dt[i]).diff(dayjs(), 'day') < 5 ){
-                fiveDaysWeather.push(list.dt[i]);
+            //if(dayjs(data[i].dt).diff(dayjs(), 'day') === dayjs() &&
+            //dayjs(data[i].dt).diff(dayjs(), 'day') < 5 ){
+                fiveDaysWeather.push(data.list[i].dt);
                 return fiveDaysWeather;
-            }
+           // }
             console.log(fiveDaysWeather);
 
-            
-    }
-})
-}
-
+   
            //creating card for today's weather
              const todayWeather = document.createElement('h2');
              const todayTemp = document.createElement('p');
              const todayWind = document.createElement('p');
              const todayHumidity = document.createElement('p');
+
+             todayWeather.innerHTML = list;
+             todayTemp.innerHTML = list.main.temp;
+             todayWind.innerHTML = list.main;
+             todayHumidity.innerHTML = list.main.humidity;
  
-             const todayValue = todayWeather.list;
-             const todayTempValue = todayTemp.list.main.temp;
-             const todayWindValue = todayWind.list.wind;
-             const todayHumidityValue = todayHumidity.list.main.humidity;
- 
-             weatherDetail.append(todayValue);
-             weatherDetail.append(todayTempValue);
-             weatherDetail.append(todayWindValue);
-             weatherDetail.append(todayHumidityValue);
+             weatherDetail.append(todayWeather);
+             weatherDetail.append(todayTemp);
+             weatherDetail.append(todayWind);
+             weatherDetail.append(todayHumidity);
 
 
              //5 days forcast===========
@@ -106,13 +102,13 @@ function getWeather(lat, lon){
             const day1Wind = document.createElement('p');
             const day1Humidity = document.createElement('p');
 
-            const day1TempValue = day1Temp.list.main.temp;
-            const day1WindValue = day1Wind.list.wind;
-            const day1HumidityValue = day1Humidity.list.main.humidity;
+            day1Temp.innerHTML = list.main.temp;
+            day1Wind.innerHTML = list.wind;
+            day1Humidity.innerHTML = list.main.humidity;
 
-            dayFive.append(day1TempValue);
-            dayFive.append(day1WindValue);
-            dayFive.append(day1HumidityValue);
+            dayFive.append(day1Temp);
+            dayFive.append(day1Wind);
+            dayFive.append(day1Humidity);
 
             //day after tomorrow forecast
             const day2 = document.createElement('div');
@@ -126,16 +122,20 @@ function getWeather(lat, lon){
             const day2Wind = document.createElement('p');
             const day2Humidity = document.createElement('p');
 
-            const day2TempValue = day1Temp.list.main.temp;
-            const day2WindValue = day1Wind.list.wind;
-            const day2HumidityValue = day1Humidity.list.main.humidity;
+            day1Temp.innerHTML = list.main.temp;
+            day1Wind.innerHTML = list.wind;
+            day1Humidity.innerHTML = list.main.humidity;
 
-            dayFive.append(day2TempValue);
-            dayFive.append(day2WindValue);
-            dayFive.append(day2HumidityValue);
+            dayFive.append(day2Temp);
+            dayFive.append(day2Wind);
+            dayFive.append(day2Humidity);
             
 
-
+         
+        }
+    })
+    }
+    
 
  
 
