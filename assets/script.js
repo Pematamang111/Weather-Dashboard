@@ -57,24 +57,24 @@ function getWeather(lat, lon){
 
             for( let i = 0; i < data.length; i++){
             const fiveDaysWeather = [];
-            if(dayjs(data[i].dt).diff(dayjs(), 'day') === dayjs() &&
-            dayjs(data[i].dt).diff(dayjs(), 'day') < 5 ){
+           // if(dayjs(data.list[i].dt).diff(dayjs(), 'day') === dayjs() &&
+           // dayjs(data.list[i].dt).diff(dayjs(), 'day') < 5 ){
                 fiveDaysWeather.push(data.list[i].dt);
-                return fiveDaysWeather;
-            }
+               // return fiveDaysWeather;
+           // }
             console.log(fiveDaysWeather);
 
    
            //creating card for today's weather
-            /* const todayWeather = document.createElement('h2');
+             const todayWeather = document.createElement('h2');
              const todayTemp = document.createElement('p');
              const todayWind = document.createElement('p');
              const todayHumidity = document.createElement('p');
 
-             todayWeather.innerHTML = data.list[0];
-             todayTemp.innerHTML = data.list[0].main.temp;
-             todayWind.innerHTML = data.list[0].wind;
-             todayHumidity.innerHTML = data.list[0].main.humidity;
+             todayWeather.innerHTML = data.list[1];
+             todayTemp.innerHTML = data.list[1].main.temp;
+             todayWind.innerHTML = data.list[1].wind;
+             todayHumidity.innerHTML = data.list[1].main.humidity;
              console.log(todayWeather);
  
              weatherDetail.append(todayWeather);
@@ -84,7 +84,7 @@ function getWeather(lat, lon){
 
 
              //5 days forcast===========
-            const day5head = document.createElement('h3');
+           /* const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
             dayFive.append(day5head);
 
