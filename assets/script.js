@@ -108,7 +108,7 @@ function getWeather(lat, lon){
 
             const day1TempValue = day1Temp.list.main.temp;
             const day1WindValue = day1Wind.list.wind;
-            const day1HumidityValue = day1Humadity.list.main.humidity;
+            const day1HumidityValue = day1Humidity.list.main.humidity;
 
             dayFive.append(day1TempValue);
             dayFive.append(day1WindValue);
