@@ -9,15 +9,17 @@ const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 //data==================================
 let cityName = selectInput.value;
 
-    
-     function saveHistory(){
+    let citiesArray = [];
+    function saveCities(){
     const setCity = localStorage.setItem('city', JSON.stringify(cityName));
     const getCity = JSON.parse(localStorage.getItem(setCity));
     
     const createLi = document.createElement('li');
     createLi.style.backgroundColor = '#BBC3A4';
-    const textLi = createLi.innerHTML = getCity;
+    createLi.innerHTML = getCity;
+    citiesArray.push(getCity);
     saveHistory.append(textLi);
+
 }
 
 //function==============================
@@ -36,6 +38,7 @@ fetch(latlonUrl)
     const lat = data[0].lat;
     const lon = data[0].lon;
     getWeather(lat, lon);
+    getTodayWeather(lat, lon);
 
     })
 }
@@ -51,13 +54,13 @@ function getWeather(lat, lon){
      .then(function(data){
          console.log(data);
 
-            for( let i = 0; i < 5; i++){
+            for( let i = 0; i < data.length; i++){
             const fiveDaysWeather = [];
-            //if(dayjs(data[i].dt).diff(dayjs(), 'day') === dayjs() &&
-            //dayjs(data[i].dt).diff(dayjs(), 'day') < 5 ){
+            if(dayjs(data[i].dt).diff(dayjs(), 'day') === dayjs() &&
+            dayjs(data[i].dt).diff(dayjs(), 'day') < 5 ){
                 fiveDaysWeather.push(data.list[i].dt);
-                //return fiveDaysWeather;
-           // }
+                return fiveDaysWeather;
+            }
             console.log(fiveDaysWeather);
 
    
@@ -131,7 +134,7 @@ function getWeather(lat, lon){
     }
 
 
-    function getTodayWeather(){
+    function getTodayWeather(lat, lon){
         const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
     
         fetch(weatherUrl)
@@ -141,7 +144,7 @@ function getWeather(lat, lon){
          .then(function(data){
              console.log(data);
 
-        if(dayjs(data.list[i].dt).diff(dayjs() === dayjs())){
+            data.list[0].dt;
 
         const todayWeather = document.createElement('h2');
         const todayTemp = document.createElement('p');
@@ -160,7 +163,7 @@ function getWeather(lat, lon){
         weatherDetail.append(todayHumidity);
 
 
-        }
+        
 
           } )}
 
