@@ -10,8 +10,9 @@ const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 let cityName = selectInput.value;
 
     let citiesArray = [];
-    function saveCities(){
     const setCity = localStorage.setItem('city', JSON.stringify(cityName));
+
+    function saveCities(){
     const getCity = JSON.parse(localStorage.getItem(setCity));
     
     const createLi = document.createElement('li');
