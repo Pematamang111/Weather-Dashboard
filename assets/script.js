@@ -35,35 +35,53 @@ const day = today.getDate();
 
 function getApi(){
 const cityName = selectInput.value;
-const weatherUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
+const latlonUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
 
 
-fetch(weatherUrl)
+fetch(latlonUrl)
    .then(function(response){
        return response.json();
 })
     .then(function(data){
         console.log(data);
+    const lat = data[0].lat;
+    const lon = data[0].lon;
+    getWeather(lat, lon);
 
-        for( let i = 0; i < data.length; i++){
-            const today = document.createElement('h2');
-            const todayTemp = document.createElement('p');
-            const todayWind = document.createElement('p');
-            const todayHumidity = document.createElement('p');
+    })
+}
 
-            const todayValue = today.data[i]
-            const todayTempValue = todayTemp.data[i]
-            const todayWindValue = todayWind.data[i]
-            const todayHumidityValue = todayHumidity.data[i]
+          
 
-            weatherDetail.append(todayValue);
-            weatherDetail.append(todayTempValue);
-            weatherDetail.append(todayWindValue);
-            weatherDetail.append(todayHumidityValue);
 
-            
+function getWeather(lat, lon){
+   const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    
+    fetch(weatherUrl)
+    .then(function(response){
+        return response.json();
+ })
+     .then(function(data){
+         console.log(data);
+ 
+         for( let i = 0; i < data.length; i++){
+             const today = document.createElement('h2');
+             const todayTemp = document.createElement('p');
+             const todayWind = document.createElement('p');
+             const todayHumidity = document.createElement('p');
+ 
+             const todayValue = today.data[i]
+             const todayTempValue = todayTemp.data[i]
+             const todayWindValue = todayWind.data[i]
+             const todayHumidityValue = todayHumidity.data[i]
+ 
+             weatherDetail.append(todayValue);
+             weatherDetail.append(todayTempValue);
+             weatherDetail.append(todayWindValue);
+             weatherDetail.append(todayHumidityValue);
 
-            //5 days forcast===========
+
+             //5 days forcast===========
             const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
             dayFive.append(day5head);
@@ -114,6 +132,12 @@ fetch(weatherUrl)
     }
 })
 }
+ 
+
+
+
+
+
 
 //userinterreaction===========================
 searchButton.addEventListener('click', getApi);
