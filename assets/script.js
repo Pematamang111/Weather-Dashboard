@@ -76,8 +76,9 @@ function getWeather(lat, lon){
 
              todayWeather.innerHTML = data.list[i];
              todayTemp.innerHTML = data.list[i].main.temp;
-             todayWind.innerHTML = data.list[i].main;
+             todayWind.innerHTML = data.list[i].wind;
              todayHumidity.innerHTML = data.list[i].main.humidity;
+             console.log(todayWeather);
  
              weatherDetail.append(todayWeather);
              weatherDetail.append(todayTemp);
@@ -85,7 +86,7 @@ function getWeather(lat, lon){
              weatherDetail.append(todayHumidity);
 
 
-             //5 days forcast===========
+            /* //5 days forcast===========
             const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
             dayFive.append(day5head);
@@ -128,7 +129,7 @@ function getWeather(lat, lon){
 
             dayFive.append(day2Temp);
             dayFive.append(day2Wind);
-            dayFive.append(day2Humidity);
+            dayFive.append(day2Humidity);*/
             
 
          
