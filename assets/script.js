@@ -63,7 +63,7 @@ function getWeather(lat, lon){
             //if(dayjs(data[i].dt).diff(dayjs(), 'day') === dayjs() &&
             //dayjs(data[i].dt).diff(dayjs(), 'day') < 5 ){
                 fiveDaysWeather.push(data.list[i].dt);
-                return fiveDaysWeather;
+                //return fiveDaysWeather;
            // }
             console.log(fiveDaysWeather);
 
@@ -74,10 +74,10 @@ function getWeather(lat, lon){
              const todayWind = document.createElement('p');
              const todayHumidity = document.createElement('p');
 
-             todayWeather.innerHTML = list;
-             todayTemp.innerHTML = list.main.temp;
-             todayWind.innerHTML = list.main;
-             todayHumidity.innerHTML = list.main.humidity;
+             todayWeather.innerHTML = data.list[i];
+             todayTemp.innerHTML = data.list[i].main.temp;
+             todayWind.innerHTML = data.list[i].main;
+             todayHumidity.innerHTML = data.list[i].main.humidity;
  
              weatherDetail.append(todayWeather);
              weatherDetail.append(todayTemp);
@@ -102,9 +102,9 @@ function getWeather(lat, lon){
             const day1Wind = document.createElement('p');
             const day1Humidity = document.createElement('p');
 
-            day1Temp.innerHTML = list.main.temp;
-            day1Wind.innerHTML = list.wind;
-            day1Humidity.innerHTML = list.main.humidity;
+            day1Temp.innerHTML = data.list[i].main.temp;
+            day1Wind.innerHTML = data.list[i].wind;
+            day1Humidity.innerHTML = data.list[i].main.humidity;
 
             dayFive.append(day1Temp);
             dayFive.append(day1Wind);
@@ -122,9 +122,9 @@ function getWeather(lat, lon){
             const day2Wind = document.createElement('p');
             const day2Humidity = document.createElement('p');
 
-            day1Temp.innerHTML = list.main.temp;
-            day1Wind.innerHTML = list.wind;
-            day1Humidity.innerHTML = list.main.humidity;
+            day1Temp.innerHTML = data.list[i].main.temp;
+            day1Wind.innerHTML = data.list[i].wind;
+            day1Humidity.innerHTML = data.list[i].main.humidity;
 
             dayFive.append(day2Temp);
             dayFive.append(day2Wind);
