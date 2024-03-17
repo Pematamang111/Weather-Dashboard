@@ -9,21 +9,16 @@ const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 //data==================================
 let cityName = selectInput.value;
 
-    /*const today = dayjs();
-    const formatDay = today.format('mm/dd/yyyy');
-    document.querySelector('nav').append(formatDay);*/
-     
+    
+     function saveHistory(){
     const setCity = localStorage.setItem('city', JSON.stringify(cityName));
     const getCity = JSON.parse(localStorage.getItem(setCity));
     
-   /* const createhead = document.querySelector('h2');
-    const texthead = createhead.innerHTML = getCity + "" + formatDay;
-    weatherDetail.append(texthead);*/
-
     const createLi = document.createElement('li');
     createLi.style.backgroundColor = '#BBC3A4';
     const textLi = createLi.innerHTML = getCity;
     saveHistory.append(textLi);
+}
 
 //function==============================
 
@@ -46,8 +41,6 @@ fetch(latlonUrl)
 }
 
           
-
-
 function getWeather(lat, lon){
    const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
     
@@ -69,15 +62,15 @@ function getWeather(lat, lon){
 
    
            //creating card for today's weather
-             const todayWeather = document.createElement('h2');
+            /* const todayWeather = document.createElement('h2');
              const todayTemp = document.createElement('p');
              const todayWind = document.createElement('p');
              const todayHumidity = document.createElement('p');
 
-             todayWeather.innerHTML = data.list[i];
-             todayTemp.innerHTML = data.list[i].main.temp;
-             todayWind.innerHTML = data.list[i].wind;
-             todayHumidity.innerHTML = data.list[i].main.humidity;
+             todayWeather.innerHTML = data.list[0];
+             todayTemp.innerHTML = data.list[0].main.temp;
+             todayWind.innerHTML = data.list[0].wind;
+             todayHumidity.innerHTML = data.list[0].main.humidity;
              console.log(todayWeather);
  
              weatherDetail.append(todayWeather);
@@ -86,7 +79,7 @@ function getWeather(lat, lon){
              weatherDetail.append(todayHumidity);
 
 
-            /* //5 days forcast===========
+             //5 days forcast===========
             const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
             dayFive.append(day5head);
@@ -136,6 +129,43 @@ function getWeather(lat, lon){
         }
     })
     }
+
+
+    function getTodayWeather(){
+        const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
+    
+        fetch(weatherUrl)
+        .then(function(response){
+            return response.json();
+        })
+         .then(function(data){
+             console.log(data);
+
+        if(dayjs(data.list[i].dt).diff(dayjs() === dayjs())){
+
+        const todayWeather = document.createElement('h2');
+        const todayTemp = document.createElement('p');
+        const todayWind = document.createElement('p');
+        const todayHumidity = document.createElement('p');
+
+        todayWeather.innerHTML = data.list[0];
+        todayTemp.innerHTML = data.list[0].main.temp;
+        todayWind.innerHTML = data.list[0].wind;
+        todayHumidity.innerHTML = data.list[0].main.humidity;
+        console.log(todayWeather);
+
+        weatherDetail.append(todayWeather);
+        weatherDetail.append(todayTemp);
+        weatherDetail.append(todayWind);
+        weatherDetail.append(todayHumidity);
+
+
+        }
+
+          } )}
+
+
+    
     
 
  
