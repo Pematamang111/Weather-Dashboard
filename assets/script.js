@@ -7,7 +7,7 @@ const saveHistory = document.querySelector('#history');
 const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 
 //data==================================
-const cityName = selectInput.value; 
+let cityName = selectInput.value;
 
 /*const today = new Date();
 const year = today.getFullYear();
@@ -32,7 +32,9 @@ const day = today.getDate();
     saveHistory.append(textLi);
 
 //function==============================
+
 function getApi(){
+const cityName = selectInput.value;
 const weatherUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
 
 
