@@ -22,8 +22,9 @@ N/A
 Please refer to the LICENSE in the repo.
 
 ## Screenshot
-1 ./assets/images/screenshot (67).png
-2 ./assets/images/screenshot (68).png
+<img src="screenshot (67).png">
+<img src="screenshot (68).png">
+
 
 
 ## Deployed link
