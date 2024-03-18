@@ -39,7 +39,6 @@ fetch(latlonUrl)
     const lat = data[0].lat;
     const lon = data[0].lon;
     getWeather(lat, lon);
-    getTodayWeather(lat, lon);
 
     })
 }
@@ -54,129 +53,114 @@ function getWeather(lat, lon){
     })
      .then(function(data){
          console.log(data);
-
-            for( let i = 0; i < data.length; i++){
-            const fiveDaysWeather = [];
-           // if(dayjs(data.list[i].dt).diff(dayjs(), 'day') === dayjs() &&
-           // dayjs(data.list[i].dt).diff(dayjs(), 'day') < 5 ){
-                fiveDaysWeather.push(data.list[i].dt);
-               // return fiveDaysWeather;
-           // }
-            console.log(fiveDaysWeather);
+        data.list[0].dt;
+        data.list[1].dt;
+        data.list[2].dt;
+        data.list[3].dt;
+        data.list[4].dt;
+        data.list[5].dt;
 
    
            //creating card for today's weather
-             const todayWeather = document.createElement('h2');
-             const todayTemp = document.createElement('p');
-             const todayWind = document.createElement('p');
-             const todayHumidity = document.createElement('p');
 
-             todayWeather.innerHTML = data.list[1];
-             todayTemp.innerHTML = data.list[1].main.temp;
-             todayWind.innerHTML = data.list[1].wind;
-             todayHumidity.innerHTML = data.list[1].main.humidity;
-             console.log(todayWeather);
- 
-             weatherDetail.append(todayWeather);
-             weatherDetail.append(todayTemp);
-             weatherDetail.append(todayWind);
-             weatherDetail.append(todayHumidity);
+           const todayWeather = document.createElement('h2');
+           const todayTemp = document.createElement('p');
+           const todayWind = document.createElement('p');
+           const todayHumidity = document.createElement('p');
+   
+           todayWeather.innerHTML = data.list[0];
+           todayTemp.innerHTML = data.list[0].main.temp;
+           todayWind.innerHTML = data.list[0].wind.speed;
+           todayHumidity.innerHTML = data.list[0].main.humidity;
+           console.log(todayWeather);
+   
+           weatherDetail.append(todayWeather);
+           weatherDetail.append(todayTemp);
+           weatherDetail.append(todayWind);
+           weatherDetail.append(todayHumidity);
+   
+   
+            
+           //5 days forcast========================
 
-
-             //5 days forcast===========
-           /* const day5head = document.createElement('h3');
+            const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
             dayFive.append(day5head);
 
-            //nextday weather forecast
-            const day1 = document.createElement('div');
-            day1.style.backgroundColor = '#222831';
-            day1.style.width = '150px';
-            day1.style.height = '200px';
 
-            //have to create date for after today date 
-            // 9/14/2022 
-            const day1Temp = document.createElement('p');
-            const day1Wind = document.createElement('p');
-            const day1Humidity = document.createElement('p');
+             const day1Weather = document.createElement('h2');
+             const day1Temp = document.createElement('p');
+             const day1Wind = document.createElement('p');
+             const day1Humidity = document.createElement('p');
 
-            day1Temp.innerHTML = data.list[i].main.temp;
-            day1Wind.innerHTML = data.list[i].wind;
-            day1Humidity.innerHTML = data.list[i].main.humidity;
-
-            dayFive.append(day1Temp);
-            dayFive.append(day1Wind);
-            dayFive.append(day1Humidity);
-
-            //day after tomorrow forecast
-            const day2 = document.createElement('div');
-            day1.style.backgroundColor = '#222831';
-            day1.style.width = '150px';
-            day1.style.height = '200px';
-
-            //have to create date for after today date 
-            // 9/15/2022 
+             day1Weather.innerHTML = data.list[1];
+             day1Temp.innerHTML = data.list[1].main.temp;
+             day1Wind.innerHTML = data.list[1].wind.speed;
+             day1Humidity.innerHTML = data.list[1].main.humidity;
+ 
+             dayFive.append(day1Weather);
+             dayFive.append(day1Temp);
+             dayFive.append(day1Wind);
+             dayFive.append(day1Humidity);
+            
+        
             const day2Temp = document.createElement('p');
             const day2Wind = document.createElement('p');
             const day2Humidity = document.createElement('p');
 
-            day1Temp.innerHTML = data.list[i].main.temp;
-            day1Wind.innerHTML = data.list[i].wind;
-            day1Humidity.innerHTML = data.list[i].main.humidity;
+            day2Temp.innerHTML = data.list[2].main.temp;
+            day2Wind.innerHTML = data.list[2].wind.speed;
+            day2Humidity.innerHTML = data.list[2].main.humidity;
 
             dayFive.append(day2Temp);
             dayFive.append(day2Wind);
-            dayFive.append(day2Humidity);*/
+            dayFive.append(day2Humidity);
+
+           
+            const day3Temp = document.createElement('p');
+            const day3Wind = document.createElement('p');
+            const day3Humidity = document.createElement('p');
+
+            day3Temp.innerHTML = data.list[3].main.temp;
+            day3Wind.innerHTML = data.list[3].wind.speed;
+            day3Humidity.innerHTML = data.list[3].main.humidity;
+
+            dayFive.append(day3Temp);
+            dayFive.append(day3Wind);
+            dayFive.append(day3Humidity);
+
+
+            
+            const day4Temp = document.createElement('p');
+            const day4Wind = document.createElement('p');
+            const day4Humidity = document.createElement('p');
+
+            day4Temp.innerHTML = data.list[4].main.temp;
+            day4Wind.innerHTML = data.list[4].wind.speed;
+            day4Humidity.innerHTML = data.list[4].main.humidity;
+
+            dayFive.append(day4Temp);
+            dayFive.append(day4Wind);
+            dayFive.append(day4Humidity);
+
+
+            const day5Temp = document.createElement('p');
+            const day5Wind = document.createElement('p');
+            const day5Humidity = document.createElement('p');
+
+            day5Temp.innerHTML = data.list[5].main.temp;
+            day5Wind.innerHTML = data.list[5].wind.speed;
+            day5Humidity.innerHTML = data.list[5].main.humidity;
+
+            dayFive.append(day5Temp);
+            dayFive.append(day5Wind);
+            dayFive.append(day5Humidity);
             
 
          
-        }
+        
     })
     }
-
-
-    function getTodayWeather(lat, lon){
-        const weatherUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${apiKey}`
-    
-        fetch(weatherUrl)
-        .then(function(response){
-            return response.json();
-        })
-         .then(function(data){
-             console.log(data);
-
-            data.list[0].dt;
-
-        const todayWeather = document.createElement('h2');
-        const todayTemp = document.createElement('p');
-        const todayWind = document.createElement('p');
-        const todayHumidity = document.createElement('p');
-
-        todayWeather.innerHTML = data.list[0];
-        todayTemp.innerHTML = data.list[0].main.temp;
-        todayWind.innerHTML = data.list[0].wind;
-        todayHumidity.innerHTML = data.list[0].main.humidity;
-        console.log(todayWeather);
-
-        weatherDetail.append(todayWeather);
-        weatherDetail.append(todayTemp);
-        weatherDetail.append(todayWind);
-        weatherDetail.append(todayHumidity);
-
-
-        
-
-          } )}
-
-
-    
-    
-
- 
-
-
-
-
 
 
 //userinterreaction===========================
