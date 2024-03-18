@@ -77,7 +77,7 @@ function getWeather(lat, lon){
    
            const currentDate = new Date();
            console.log(currentDate);
-           todayWeather.innerHTML = data.city.name + "-" + currentDate.toLocaleString();
+           todayWeather.innerHTML = data.city.name +" "+ currentDate.toLocaleString();
            todayTemp.innerHTML = 'Temp'+' '+ data.list[0].main.temp;
            todayWind.innerHTML = 'Wind'+' '+data.list[0].wind.speed;
            todayHumidity.innerHTML = 'Humidity'+' '+ data.list[0].main.humidity;
