@@ -68,6 +68,7 @@ function getWeather(lat, lon){
 
    
            //creating card for today's weather
+           weatherDetail.innerHTML = " ";
 
            const todayWeather = document.createElement('h2');
            const todayTemp = document.createElement('p');
@@ -90,6 +91,7 @@ function getWeather(lat, lon){
    
             
            //5 days forcast========================
+            dayFive.innerHTML = " "; 
 
             const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
@@ -189,6 +191,8 @@ function getWeather(lat, lon){
 //userinterreaction===========================
 searchButton.addEventListener('click', getApi);
 ulEl.addEventListener('click', function(e){
-    e.target();
-    getApi();
+   const eventLi = e.target.innerText;
+    console.log(eventLi);
+    getApi(eventLi);
+
 })
