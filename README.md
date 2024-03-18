@@ -22,11 +22,8 @@ N/A
 Please refer to the LICENSE in the repo.
 
 ## Screenshot
-1 (./assets/screenshot1.png)
-2 (./assets/screenshot2.png)
-3 (./assets/screenshot3.png)
-4 (./assets/screenshot4.png)
-
+1 (./assets/images/screenshot (67).png)
+2 (./assets/images/screenshot (68).png)
 
 
 ## Deployed link
