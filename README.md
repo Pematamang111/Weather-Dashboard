@@ -22,8 +22,8 @@ N/A
 Please refer to the LICENSE in the repo.
 
 ## Screenshot
-<img src="screenshot (67).png">
-<img src="screenshot (68).png">
+<img src="screenshot1.png">
+<img src="screenshot2.png">
 
 
 
