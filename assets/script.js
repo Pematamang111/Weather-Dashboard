@@ -8,7 +8,6 @@ const ulEl = document.querySelector('#history');
 const apiKey = '7cb9b0e18cc07a883b919195c72f4dcd';
 
 //data==================================
-let cityName = selectInput.value;
 
     let citiesArray = [];
 
@@ -30,8 +29,7 @@ let cityName = selectInput.value;
 
 //function==============================
 
-function getApi(){
-const cityName = selectInput.value;
+function getApi(cityName){
 const latlonUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${apiKey}`
 
 
@@ -189,7 +187,7 @@ function getWeather(lat, lon){
 
 
 //userinterreaction===========================
-searchButton.addEventListener('click', getApi);
+searchButton.addEventListener('click', () => getApi(selectInput.value));
 ulEl.addEventListener('click', function(e){
    const eventLi = e.target.innerText;
     console.log(eventLi);
