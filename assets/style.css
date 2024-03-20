@@ -60,11 +60,13 @@ h2 {
 #weatherDetail {
     background-color: rgb(112, 166, 228);
     width: 1000px;
-   
+    padding-left: 30px;  
 }
 
 #dayFive {
     background-color: rgb(221, 138, 221);
     width: 1000px;
     margin-top: 10px;
+    padding-left: 30px;
+    
 }
