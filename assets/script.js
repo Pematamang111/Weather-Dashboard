@@ -65,7 +65,18 @@ function getWeather(lat, lon){
         data.list[3].dt;
         data.list[4].dt;
         data.list[5].dt;
-
+        const iconCode = data.list[0].weather[0].icon;  // Extract icon code
+       const iconUrl = `https://openweathermap.org/img/wn/${iconCode}@2x.png`;
+       // const iconCode1 = data.list[1].weather[1].icon;  // Extract icon code
+       //const iconUrl1 = `https://openweathermap.org/img/wn/${iconCode1}@2x.png`;
+       // const iconCode2 = data.list[2].weather[2].icon;  // Extract icon code
+       // const iconUrl2 = `https://openweathermap.org/img/wn/${iconCode2}@2x.png`;
+       // const iconCode3 = data.list[3].weather[3].icon;  // Extract icon code
+        //const iconUrl3 = `https://openweathermap.org/img/wn/${iconCode3}@2x.png`;
+        //const iconCode4 = data.list[4].weather[4].icon;  // Extract icon code
+        //const iconUrl4 = `https://openweathermap.org/img/wn/${iconCode4}@2x.png`;
+        //const iconCode5 = data.list[5].weather[5].icon;  // Extract icon code
+        //const iconUrl5 = `https://openweathermap.org/img/wn/${iconCode5}@2x.png`;
    
            //creating card for today's weather
            weatherDetail.innerHTML = " ";
@@ -81,7 +92,7 @@ function getWeather(lat, lon){
            const currentDate = new Date();
            console.log(currentDate);
            todayWeather.innerHTML = data.city.name +" "+ currentDate.toLocaleString();
-           todayIcon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+           todayIcon.setAttribute('src', iconUrl);
            todayTemp.innerHTML = 'Temp'+' '+ data.list[0].main.temp;
            todayWind.innerHTML = 'Wind'+' '+data.list[0].wind.speed;
            todayHumidity.innerHTML = 'Humidity'+' '+ data.list[0].main.humidity;
@@ -108,60 +119,60 @@ function getWeather(lat, lon){
 
              const day1Weather = document.createElement('p');
              day1Weather.style.fontWeight = 'bold';
-             const day1Icon = document.createElement('img');
+             //const day1Icon = document.createElement('img');
              const day1Temp = document.createElement('p');
              const day1Wind = document.createElement('p');
              const day1Humidity = document.createElement('p');
              day1Humidity.style.paddingBottom = '15px';
 
              day1Weather.innerHTML = data.list[1].dt_txt;
-             day1Icon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+             //day1Icon.setAttribute('src', iconUrl1);
              day1Temp.innerHTML = 'Temp'+' '+ data.list[1].main.temp;
              day1Wind.innerHTML = 'Wind'+' '+ data.list[1].wind.speed;
              day1Humidity.innerHTML = 'Humidity'+' '+ data.list[1].main.humidity;
  
              dayFive.append(day1Weather);
-             dayFive.append(day1Icon);
+             //dayFive.append(day1Icon);
              dayFive.append(day1Temp);
              dayFive.append(day1Wind);
              dayFive.append(day1Humidity);
             
             const day2Weather = document.createElement('p');
             day2Weather.style.fontWeight = 'bold';
-            const day2Icon = document.createElement('img');
+            //const day2Icon = document.createElement('img');
             const day2Temp = document.createElement('p');
             const day2Wind = document.createElement('p');
             const day2Humidity = document.createElement('p');
             day2Humidity.style.paddingBottom = '15px';
             
             day2Weather.innerHTML = data.list[2].dt_txt;
-            day2Icon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+           // day2Icon.setAttribute('src', iconCode2);
             day2Temp.innerHTML = 'Temp'+' '+ data.list[2].main.temp;
             day2Wind.innerHTML = 'Wind'+' '+ data.list[2].wind.speed;
             day2Humidity.innerHTML = 'Humidity'+' '+ data.list[2].main.humidity;
             
             dayFive.append(day2Weather);
-            dayFive.append(day2Icon);
+            //dayFive.append(day2Icon);
             dayFive.append(day2Temp);
             dayFive.append(day2Wind);
             dayFive.append(day2Humidity);
 
             const day3Weather = document.createElement('p');
             day3Weather.style.fontWeight = 'bold';
-            const day3Icon = document.createElement('img');
+            //const day3Icon = document.createElement('img');
             const day3Temp = document.createElement('p');
             const day3Wind = document.createElement('p');
             const day3Humidity = document.createElement('p');
             day3Humidity.style.paddingBottom = '15px';
             
             day3Weather.innerHTML = data.list[3].dt_txt;
-            day3Icon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+            //day3Icon.setAttribute('src', iconCode3);
             day3Temp.innerHTML = 'Temp'+' '+ data.list[3].main.temp;
             day3Wind.innerHTML = 'Wind'+' '+ data.list[3].wind.speed;
             day3Humidity.innerHTML = 'Humidity'+' '+ data.list[3].main.humidity;
             
             dayFive.append(day3Weather);
-            dayFive.append(day3Icon);
+            //dayFive.append(day3Icon);
             dayFive.append(day3Temp);
             dayFive.append(day3Wind);
             dayFive.append(day3Humidity);
@@ -169,40 +180,40 @@ function getWeather(lat, lon){
 
             const day4Weather = document.createElement('p');
             day4Weather.style.fontWeight = 'bold';
-            const day4Icon = document.createElement('img');
+            //const day4Icon = document.createElement('img');
             const day4Temp = document.createElement('p');
             const day4Wind = document.createElement('p');
             const day4Humidity = document.createElement('p');
             day4Humidity.style.paddingBottom = '15px';
             
             day4Weather.innerHTML = data.list[4].dt_txt;
-            day4Icon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+            //day4Icon.setAttribute('src', iconCode4);
             day4Temp.innerHTML = 'Temp'+' '+ data.list[4].main.temp;
             day4Wind.innerHTML = 'Wind'+' '+ data.list[4].wind.speed;
             day4Humidity.innerHTML = 'Humidity'+' '+ data.list[4].main.humidity;
             
             dayFive.append(day4Weather);
-            dayFive.append(day4Icon);
+            //dayFive.append(day4Icon);
             dayFive.append(day4Temp);
             dayFive.append(day4Wind);
             dayFive.append(day4Humidity);
 
             const day5Weather = document.createElement('p');
             day5Weather.style.fontWeight = 'bold';
-            const day5Icon = document.createElement('img');
+            //const day5Icon = document.createElement('img');
             const day5Temp = document.createElement('p');
             const day5Wind = document.createElement('p');
             const day5Humidity = document.createElement('p');
             day5Humidity.style.paddingBottom = '15px';
             
             day5Weather.innerHTML = data.list[5].dt_txt;
-            day5Icon.setAttribute('src', 'https://openweathermap.org/img/wn/10d@2x.png');
+            //day5Icon.setAttribute('src', iconCode5);
             day5Temp.innerHTML = 'Temp'+' '+ data.list[5].main.temp;
             day5Wind.innerHTML = 'Wind'+' '+ data.list[5].wind.speed;
             day5Humidity.innerHTML = 'Humidity'+' '+ data.list[5].main.humidity;
             
             dayFive.append(day5Weather);
-            dayFive.append(day5Icon);
+            //dayFive.append(day5Icon);
             dayFive.append(day5Temp);
             dayFive.append(day5Wind);
             dayFive.append(day5Humidity);
