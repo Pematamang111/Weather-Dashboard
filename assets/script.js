@@ -91,11 +91,11 @@ function getWeather(lat, lon){
    
            const currentDate = new Date();
            console.log(currentDate);
-           todayWeather.innerHTML = data.city.name +" "+ currentDate.toLocaleString();
+           todayWeather.innerHTML = data.city.name +" "+ currentDate.toLocaleDateString();
            todayIcon.setAttribute('src', iconUrl);
            todayTemp.innerHTML = 'Temp'+' '+ data.list[0].main.temp;
-           todayWind.innerHTML = 'Wind'+' '+data.list[0].wind.speed;
-           todayHumidity.innerHTML = 'Humidity'+' '+ data.list[0].main.humidity;
+           todayWind.innerHTML = 'Wind Speed'+' '+data.list[0].wind.speed + ' '+'mph';
+           todayHumidity.innerHTML = 'Humidity'+' '+ data.list[0].main.humidity + '%';
            console.log(todayWeather);
    
            weatherDetail.append(todayWeather);
@@ -111,6 +111,7 @@ function getWeather(lat, lon){
 
             const day5head = document.createElement('h3');
             day5head.innerHTML = '5-Day Forecast:';
+            day5head.style.color = 'white';
             day5head.style.fontFamily = 'Arial, Helvetica, sans-serif';
             day5head.style.fontSize = '25px';
             day5head.style.paddingTop = '10px';
@@ -124,18 +125,20 @@ function getWeather(lat, lon){
              const day1Wind = document.createElement('p');
              const day1Humidity = document.createElement('p');
              day1Humidity.style.paddingBottom = '15px';
+             const hrLine1 = document.createElement('hr');
 
              day1Weather.innerHTML = data.list[1].dt_txt;
              //day1Icon.setAttribute('src', iconUrl1);
              day1Temp.innerHTML = 'Temp'+' '+ data.list[1].main.temp;
-             day1Wind.innerHTML = 'Wind'+' '+ data.list[1].wind.speed;
-             day1Humidity.innerHTML = 'Humidity'+' '+ data.list[1].main.humidity;
+             day1Wind.innerHTML = 'Wind Speed'+' '+ data.list[1].wind.speed + ' ' + 'mph';
+             day1Humidity.innerHTML = 'Humidity'+' '+ data.list[1].main.humidity + '%';
  
              dayFive.append(day1Weather);
              //dayFive.append(day1Icon);
              dayFive.append(day1Temp);
              dayFive.append(day1Wind);
              dayFive.append(day1Humidity);
+             dayFive.append(hrLine1);
             
             const day2Weather = document.createElement('p');
             day2Weather.style.fontWeight = 'bold';
@@ -144,18 +147,20 @@ function getWeather(lat, lon){
             const day2Wind = document.createElement('p');
             const day2Humidity = document.createElement('p');
             day2Humidity.style.paddingBottom = '15px';
+            const hrLine2 = document.createElement('hr');
             
             day2Weather.innerHTML = data.list[2].dt_txt;
            // day2Icon.setAttribute('src', iconCode2);
             day2Temp.innerHTML = 'Temp'+' '+ data.list[2].main.temp;
-            day2Wind.innerHTML = 'Wind'+' '+ data.list[2].wind.speed;
-            day2Humidity.innerHTML = 'Humidity'+' '+ data.list[2].main.humidity;
+            day2Wind.innerHTML = 'Wind Speed'+' '+ data.list[2].wind.speed + ' ' + 'mph';
+            day2Humidity.innerHTML = 'Humidity'+' '+ data.list[2].main.humidity + '%';
             
             dayFive.append(day2Weather);
             //dayFive.append(day2Icon);
             dayFive.append(day2Temp);
             dayFive.append(day2Wind);
             dayFive.append(day2Humidity);
+            dayFive.append(hrLine2);
 
             const day3Weather = document.createElement('p');
             day3Weather.style.fontWeight = 'bold';
@@ -164,18 +169,20 @@ function getWeather(lat, lon){
             const day3Wind = document.createElement('p');
             const day3Humidity = document.createElement('p');
             day3Humidity.style.paddingBottom = '15px';
+            const hrLine3 = document.createElement('hr');
             
             day3Weather.innerHTML = data.list[3].dt_txt;
             //day3Icon.setAttribute('src', iconCode3);
             day3Temp.innerHTML = 'Temp'+' '+ data.list[3].main.temp;
-            day3Wind.innerHTML = 'Wind'+' '+ data.list[3].wind.speed;
-            day3Humidity.innerHTML = 'Humidity'+' '+ data.list[3].main.humidity;
+            day3Wind.innerHTML = 'Wind Speed'+' '+ data.list[3].wind.speed + ' ' + 'mph';
+            day3Humidity.innerHTML = 'Humidity'+' '+ data.list[3].main.humidity + '%';
             
             dayFive.append(day3Weather);
             //dayFive.append(day3Icon);
             dayFive.append(day3Temp);
             dayFive.append(day3Wind);
             dayFive.append(day3Humidity);
+            dayFive.append(hrLine3);
 
 
             const day4Weather = document.createElement('p');
@@ -185,18 +192,20 @@ function getWeather(lat, lon){
             const day4Wind = document.createElement('p');
             const day4Humidity = document.createElement('p');
             day4Humidity.style.paddingBottom = '15px';
+            const hrLine4 = document.createElement('hr');
             
             day4Weather.innerHTML = data.list[4].dt_txt;
             //day4Icon.setAttribute('src', iconCode4);
             day4Temp.innerHTML = 'Temp'+' '+ data.list[4].main.temp;
-            day4Wind.innerHTML = 'Wind'+' '+ data.list[4].wind.speed;
-            day4Humidity.innerHTML = 'Humidity'+' '+ data.list[4].main.humidity;
+            day4Wind.innerHTML = 'Wind Speed'+' '+ data.list[4].wind.speed + ' ' + 'mph';
+            day4Humidity.innerHTML = 'Humidity'+' '+ data.list[4].main.humidity + '%';
             
             dayFive.append(day4Weather);
             //dayFive.append(day4Icon);
             dayFive.append(day4Temp);
             dayFive.append(day4Wind);
             dayFive.append(day4Humidity);
+            dayFive.append(hrLine4);
 
             const day5Weather = document.createElement('p');
             day5Weather.style.fontWeight = 'bold';
@@ -205,18 +214,20 @@ function getWeather(lat, lon){
             const day5Wind = document.createElement('p');
             const day5Humidity = document.createElement('p');
             day5Humidity.style.paddingBottom = '15px';
+            const hrLine5 = document.createElement('hr');
             
             day5Weather.innerHTML = data.list[5].dt_txt;
             //day5Icon.setAttribute('src', iconCode5);
             day5Temp.innerHTML = 'Temp'+' '+ data.list[5].main.temp;
-            day5Wind.innerHTML = 'Wind'+' '+ data.list[5].wind.speed;
-            day5Humidity.innerHTML = 'Humidity'+' '+ data.list[5].main.humidity;
+            day5Wind.innerHTML = 'Wind Speed'+' '+ data.list[5].wind.speed + ' ' + 'mph';
+            day5Humidity.innerHTML = 'Humidity'+' '+ data.list[5].main.humidity + '%';
             
             dayFive.append(day5Weather);
             //dayFive.append(day5Icon);
             dayFive.append(day5Temp);
             dayFive.append(day5Wind);
             dayFive.append(day5Humidity);
+            dayFive.append(hrLine5);
             
 
          
