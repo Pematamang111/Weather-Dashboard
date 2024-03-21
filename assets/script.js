@@ -127,7 +127,7 @@ function getWeather(lat, lon){
              day1Humidity.style.paddingBottom = '15px';
              const hrLine1 = document.createElement('hr');
 
-             day1Weather.innerHTML = data.list[1].dt_txt;
+             day1Weather.innerHTML = dayjs().add(1, 'day').format('YYYY-MM-DD');
              //day1Icon.setAttribute('src', iconUrl1);
              day1Temp.innerHTML = 'Temp'+' '+ data.list[1].main.temp;
              day1Wind.innerHTML = 'Wind Speed'+' '+ data.list[1].wind.speed + ' ' + 'mph';
@@ -149,7 +149,7 @@ function getWeather(lat, lon){
             day2Humidity.style.paddingBottom = '15px';
             const hrLine2 = document.createElement('hr');
             
-            day2Weather.innerHTML = data.list[2].dt_txt;
+            day2Weather.innerHTML = dayjs().add(2, 'day').format('YYYY-MM-DD');
            // day2Icon.setAttribute('src', iconCode2);
             day2Temp.innerHTML = 'Temp'+' '+ data.list[2].main.temp;
             day2Wind.innerHTML = 'Wind Speed'+' '+ data.list[2].wind.speed + ' ' + 'mph';
@@ -171,7 +171,7 @@ function getWeather(lat, lon){
             day3Humidity.style.paddingBottom = '15px';
             const hrLine3 = document.createElement('hr');
             
-            day3Weather.innerHTML = data.list[3].dt_txt;
+            day3Weather.innerHTML = dayjs().add(3, 'day').format('YYYY-MM-DD');
             //day3Icon.setAttribute('src', iconCode3);
             day3Temp.innerHTML = 'Temp'+' '+ data.list[3].main.temp;
             day3Wind.innerHTML = 'Wind Speed'+' '+ data.list[3].wind.speed + ' ' + 'mph';
@@ -194,7 +194,7 @@ function getWeather(lat, lon){
             day4Humidity.style.paddingBottom = '15px';
             const hrLine4 = document.createElement('hr');
             
-            day4Weather.innerHTML = data.list[4].dt_txt;
+            day4Weather.innerHTML = dayjs().add(4, 'day').format('YYYY-MM-DD');
             //day4Icon.setAttribute('src', iconCode4);
             day4Temp.innerHTML = 'Temp'+' '+ data.list[4].main.temp;
             day4Wind.innerHTML = 'Wind Speed'+' '+ data.list[4].wind.speed + ' ' + 'mph';
@@ -216,7 +216,7 @@ function getWeather(lat, lon){
             day5Humidity.style.paddingBottom = '15px';
             const hrLine5 = document.createElement('hr');
             
-            day5Weather.innerHTML = data.list[5].dt_txt;
+            day5Weather.innerHTML = dayjs().add(5, 'day').format('YYYY-MM-DD');
             //day5Icon.setAttribute('src', iconCode5);
             day5Temp.innerHTML = 'Temp'+' '+ data.list[5].main.temp;
             day5Wind.innerHTML = 'Wind Speed'+' '+ data.list[5].wind.speed + ' ' + 'mph';
