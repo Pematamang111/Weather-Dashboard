@@ -95,7 +95,7 @@ function getWeather(lat, lon){
            todayIcon.setAttribute('src', iconUrl);
            // °F = (K − 273.15) × 1.8 + 32 
            // (data.list[0].main.temp − 273.15) * 9/5 + 32
-           todayTemp.innerHTML = 'Temp'+' '+ ((data.list[0].main.temp - 273.15) * 1.8 + 32);
+           todayTemp.innerHTML = 'Temp'+' '+ ((data.list[0].main.temp - 273.15) * 1.8 + 32).toFixed(2);
            todayWind.innerHTML = 'Wind Speed'+' '+data.list[0].wind.speed + ' '+'mph';
            todayHumidity.innerHTML = 'Humidity'+' '+ data.list[0].main.humidity + '%';
            console.log(data.list[0].main.temp - 273.15);
@@ -134,7 +134,7 @@ function getWeather(lat, lon){
 
              day1Weather.innerHTML = dayjs().add(1, 'day').format('YYYY-MM-DD');
              day1Icon.setAttribute('src', iconUrl1);
-             day1Temp.innerHTML = 'Temp'+' '+ ((data.list[1].main.temp - 273.15) * 1.8 + 32);
+             day1Temp.innerHTML = 'Temp'+' '+ ((data.list[1].main.temp - 273.15) * 1.8 + 32).toFixed(2);
              day1Wind.innerHTML = 'Wind Speed'+' '+ data.list[1].wind.speed + ' ' + 'mph';
              day1Humidity.innerHTML = 'Humidity'+' '+ data.list[1].main.humidity + '%';
  
@@ -156,7 +156,7 @@ function getWeather(lat, lon){
             
             day2Weather.innerHTML = dayjs().add(2, 'day').format('YYYY-MM-DD');
             day2Icon.setAttribute('src', iconUrl2);
-            day2Temp.innerHTML = 'Temp'+' '+ ((data.list[2].main.temp - 273.15) * 1.8 + 32);
+            day2Temp.innerHTML = 'Temp'+' '+ ((data.list[2].main.temp - 273.15) * 1.8 + 32).toFixed(2);
             day2Wind.innerHTML = 'Wind Speed'+' '+ data.list[2].wind.speed + ' ' + 'mph';
             day2Humidity.innerHTML = 'Humidity'+' '+ data.list[2].main.humidity + '%';
             
@@ -178,7 +178,7 @@ function getWeather(lat, lon){
             
             day3Weather.innerHTML = dayjs().add(3, 'day').format('YYYY-MM-DD');
             day3Icon.setAttribute('src', iconUrl3);
-            day3Temp.innerHTML = 'Temp'+' '+ ((data.list[3].main.temp - 273.15) * 1.8 + 32);
+            day3Temp.innerHTML = 'Temp'+' '+ ((data.list[3].main.temp - 273.15) * 1.8 + 32).toFixed(2);
             day3Wind.innerHTML = 'Wind Speed'+' '+ data.list[3].wind.speed + ' ' + 'mph';
             day3Humidity.innerHTML = 'Humidity'+' '+ data.list[3].main.humidity + '%';
             
@@ -201,7 +201,7 @@ function getWeather(lat, lon){
             
             day4Weather.innerHTML = dayjs().add(4, 'day').format('YYYY-MM-DD');
             day4Icon.setAttribute('src', iconUrl4);
-            day4Temp.innerHTML = 'Temp'+' '+ ((data.list[4].main.temp - 273.15) * 1.8 + 32);
+            day4Temp.innerHTML = 'Temp'+' '+ ((data.list[4].main.temp - 273.15) * 1.8 + 32).toFixed(2);
             day4Wind.innerHTML = 'Wind Speed'+' '+ data.list[4].wind.speed + ' ' + 'mph';
             day4Humidity.innerHTML = 'Humidity'+' '+ data.list[4].main.humidity + '%';
             
@@ -223,7 +223,7 @@ function getWeather(lat, lon){
             
             day5Weather.innerHTML = dayjs().add(5, 'day').format('YYYY-MM-DD');
             day5Icon.setAttribute('src', iconUrl5);
-            day5Temp.innerHTML = 'Temp'+' '+ ((data.list[5].main.temp - 273.15) * 1.8 + 32);
+            day5Temp.innerHTML = 'Temp'+' '+ ((data.list[5].main.temp - 273.15) * 1.8 + 32).toFixed(2);
             day5Wind.innerHTML = 'Wind Speed'+' '+ data.list[5].wind.speed + ' ' + 'mph';
             day5Humidity.innerHTML = 'Humidity'+' '+ data.list[5].main.humidity + '%';
             
